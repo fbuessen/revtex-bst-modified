@@ -1,3 +1,7 @@
+%% This version has been derived from the original file `apsrev4-2.bst', obtainable at
+%% https://ctan.org/tex-archive/macros/latex/contrib/revtex
+%% It has been updated to print article titles by default and print them in gray color. 
+
 %%
 %% This is file `apsrev4-2.bst', and is a hand-edited version of apsrev4-1.bst
  % ===============================================================
@@ -36,7 +40,7 @@
  %   \citeyear{key} ==>>             1990
  %---------------------------------------------------------------------
 
-FUNCTION {id.bst} {"apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst"}
+FUNCTION {id.bst} {"bst derived from apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst"}
 ENTRY
 {
     address
@@ -209,7 +213,7 @@ FUNCTION { control.init }
   'control.author.reversed :=
   #1
   'control.editor :=
-  #-1
+  #1
   'control.title  :=
   #0
   'control.pages  :=
@@ -1790,7 +1794,7 @@ FUNCTION {doi.base}
 
 FUNCTION {doi.base.command}
 {
-  "\doibase "
+  "http://dx.doi.org/"
 }
 
 FUNCTION {noop.command}
@@ -1891,8 +1895,18 @@ FUNCTION {string.enquote}
   word.space *
 }
 
+FUNCTION {format.title.color}
+{
+  duplicate$ empty$ 'pop$
+    {
+      "{\color{Gray}" swap$ * "}" *
+    }
+  if$
+}
+
 FUNCTION {format.title}
-{ title
+{ title 
+  format.title.color
   duplicate$ empty$ 'skip$ { "t" change.case$ } if$
   duplicate$ "title" bibinfo.check swap$
   duplicate$ empty$ 'pop$
