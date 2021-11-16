@@ -40,7 +40,7 @@
  %   \citeyear{key} ==>>             1990
  %---------------------------------------------------------------------
 
-FUNCTION {id.bst} {"bst derived from apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst"}
+FUNCTION {id.bst} {"bst derived from apsrev4-2.bst (revtex)"}
 ENTRY
 {
     address
