@@ -4,20 +4,20 @@ The bibtex style file (.bst) in this repository has been derived from the origin
 The file has been modified to include article titles in the bibliography by default, and to print them in gray color. 
 
 # Usage
-Include the `apsrev4-2.bst` file in the main directory of your Latex project and specify it as the bibliography style with the Latex command `\bibliographystyle{apsrev4-2}`, see the example below. 
+Include the `modified-apsrev4-2.bst` file in the main directory of your Latex project and specify it as the bibliography style with the Latex command `\bibliographystyle{apsrev4-2}`, see the example below. 
 Compile with the usual commands
 ```
-pdflatex main
-bibtex main
-pdflatex main
-pdflatex main
+pdflatex example
+bibtex example
+pdflatex example
+pdflatex example
 ```
 
 
 #### example.tex:
 ```latex
 \documentclass{revtex4-2}
-\bibliographystyle{apsrev4-2}
+\bibliographystyle{modified-apsrev4-2}
 
 \usepackage[usenames,dvipsnames]{color}
 
